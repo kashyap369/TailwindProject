@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="swiper.css">
+    <title>Tailwind Demo</title>
+</head>
+<body>
+
+    <div id="popup" class="popup flex fixed inset-0 left-0 top-0 z-40 justify-center items-center h-screen w-full">
+        <div class="flex bg-gradient-to-br from-rose-500 to-slate-400  font-poppins flex-col rounded-2xl max-sm:w-[95%]  h-[60vh] max-sm:h-auto max-sm:pb-2 w-[50vw] bg-slate-100">
+            <div class="flex h-[25%] w-full justify-between p-2">
+                <span class="h-[5rem] w-[5rem] rounded-full bg-white bg-no-repeat bg-cover " style="background-image: url('images/shubham.jpeg');"></span>
+                <spna class="rounded-full flex justify-center items-center text-xl gap-2 font-semibold px-5 bg-red-400">Closing in <span id="countdown">5</span></spna>
+
+            </div>
+            <div class="flex justify-center text-wrap items-center ps-1 font-poppins h-[25%] w-full">
+                <span class="text-[1.2em] p-4 text-wrap">
+                    1. This website is for demonstration so some links will not lead you guys anywhere.
+
+                </span>
+            </div>
+            
+            <div class="flex justify-center text-wrap items-center ps-1 font-poppins h-[25%] w-full ">
+                <span class="text-[1.2em] p-4 text-wrap">
+                    2. You can find the designer of this website at <a class="text-blue-900" href="https://www.behance.net/DesignbyIsma">@desingbyisma</a> on behance
+
+                </span>
+            </div>
+            
+            <div class="flex h-[25%] justify-center items-center gap-4 w-full font-poppins">
+                <span class="text-lg font-semibold px-4 py-2 rounded-full bg-slate-800 text-[#fe853a]">Follow me on</span>
+                <a href="https://www.linkedin.com/in/shubham-kashyap-942976228/"><i class="fa-brands fa-linkedin fa-2x"></i></a>
+
+            </div>
+        </div>
+    </div>
+
+    <nav class="h-[10vh] w-full flex justify-center items-center">
+        <!-- mob n tab nav -->
+        <div id="mob_btn" class="hidden max-lg:flex w-full px-4 justify-between z-0 items-center">
+            <span class="font-poppins font-semibold text-xl">
+                Shubham
+            </span>
+            <span id="burgen_icon">
+                <i onclick="showmenu()" class="fa-solid fa-bars"></i>
+            </span>
+        </div>
+        <div id="mob_nav" class="absolute hidden bg-white flex-col h-screen w-full z-10 inset-0 ">
+            <span class="absolute block top-2 right-2">
+                <i onclick="showmenu()" class="fa-solid fa-xmark text-[#fc853a] border-[2px] border-[#fe853a] p-2 rounded-[5px] "></i>
+            </span>
+            <div  class="flex w-[100vw] flex-col justify-center mt-[20%] h-60%">
+
+                <a href="#home" class="font-poppins ps-4 py-2 hover:bg-yellow-200 rounded-md hover:font-semibold w-[100%]">Home</a>
+                <a href="#work" class="font-poppins ps-4 py-2 hover:bg-yellow-200 rounded-md hover:font-semibold w-[100%]">About</a>
+                <a href="#service" class="font-poppins ps-4 py-2 hover:bg-yellow-200 rounded-md hover:font-semibold w-[100%]">Service</a>
+                <a href="/images/resume.pdf" download="resume.pdf" class="font-poppins ps-4 py-2 hover:bg-yellow-200 rounded-md hover:font-semibold w-[100%]"><button>Resume</button></a>
+                <a href="#project" class="font-poppins ps-4 py-2 hover:bg-yellow-200 rounded-md hover:font-semibold w-[100%]">Project</a>
+                <a href="#contact" class="font-poppins ps-4 py-2 hover:bg-yellow-200 rounded-md hover:font-semibold w-[100%]">Contact</a>
+                
+            </div>
+           
+            
+        </div>
+        <div class="max-lg:hidden flex justify-around items-center h-[95%] w-[60%] bg-[#171717] rounded-full">
+            <a href="#home" class="hover:bg-[#fe853a] rounded-full font-poppins text-white hover:font-semibold px-3 py-2">Home</a>
+            <a href="#work" class="hover:bg-[#fe853a] rounded-full font-poppins text-white hover:font-semibold px-3 py-2">About</a>
+            <a href="#service" class="hover:bg-[#fe853a] rounded-full font-poppins text-white hover:font-semibold px-3 py-2">Service</a>
+            <a href="" class="hover:bg-[#fe853a] rounded-full font-poppins text-white hover:font-semibold px-3 py-2">Shuham</a>
+            <a href="images/resume.pdf" download="resume" class="hover:bg-[#fe853a] rounded-full font-poppins text-white hover:font-semibold px-3 py-2">Resume</a>
+            <a href="#project" class="hover:bg-[#fe853a] rounded-full font-poppins text-white hover:font-semibold px-3 py-2">Project</a>
+            <a href="#contact" class="hover:bg-[#fe853a] rounded-full font-poppins text-white hover:font-semibold px-3 py-2">Contact</a>
+        </div>
+
+    </nav>
+<!-- main section or hero section starts here -->
+    <main id="home" class="h-screen max-sm:mb-4 rounded-s-xl rounded-e-lg mb-3 w-full bg-gradient-to-tr from-pink-200 to-emerald-200">
+        <div class="max-sm:items-start flex justify-center flex-col items-center gap-3 pt-4">
+            <span class="text-lg max-sm:text-sm px-4 max-sm:ms-3 py-1 font-poppins rounded-full border-[1px] border-[#fe853a]">Hello!</span>
+            <span class="max-sm:ms-3 text-7xl max-sm:text-5xl font-poppins">I'm <strong class="text-[#fe853a] max-sm:font-bold  font-medium font-poppins">Shubham</strong></span>
+            <span class="text-7xl max-sm:text-5xl max-lg:text-6xl max-sm:ms-3 font-poppins font-semibold">Frontend Developer</span>
+        </div>
+
+        <div class="flex w-full max-sm:flex-col gap-0 justify-around items-center mt-4">
+            <div class="max-md:hidden flex w-[30vw] justify-center h-[100%] max-lg:ps-8 items-center">
+                <span class="font-poppins w-[16rem] text-lg"> 
+                    <strong class="font-medium text-[#fe853a]">Shubham's</strong> Exceptional development skills <br>ensure our website succes
+                </span>
+            </div>
+            <div class="max-sm:w-full max-sm:-mt-16 max-sm:h-auto w-[40vw] h-[50vh] flex items-center justify-center">
+                <img src="images/2842680.jpg" class="max-lg:h-[15rem] max-sm:mt-[3.5rem] max-lg:w-[15rem] h-[25rem] max-sm:h-[10rem] max-sm:w-[10rem] w-[25rem] pb-3 mt-20 max-sm:rounded-xl rounded-full max-lg:-mt-4"  alt="">
+            </div>
+            <div class="flex max-sm:mt-4 max-sm:w-full max-sm:justify-center max-sm:items-center items-end w-[30vw] flex-col max-lg:pe-4 ">
+                <span class="flex gap-1 max-sm:p-0 pe-8 justify-end">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                </span>
+                <span class="font-semibold text-lg max-sm:p-0 pe-8 justify-end text-[#fe853a] font-poppins">
+                    5 years
+
+                </span>
+                <span class="font-semibold text-left max-sm:p-0 pe-8 font-poppins">Experience</span>
+            </div>
+        </div>
+
+
+    </main>
+
+    <!-- below is the services secion ****************************************************************-->
+
+     <section id="service" class="overflow-hidden h-[80vh] max-sm:h-auto flex flex-col justify-around p-4 w-full mt-0 rounded-ss-3xl bg-slate-800">
+        <div class=" flex max-sm:flex-col max-sm:items-start max-sm:rounded-none h-auto justify-around items-center w-full">
+            <div class="flex justify-start items-center text-3xl font-poppins text-white font-semibold">My <strong class="ms-2 font-semibold text-[#fe853a]">Services</strong> </div>
+            <div class="w-[40%] max-sm:w-[100%] max-sm:text-sm max-sm:text-left flex justify-center items-end text-right text-white pt-4 font-poppins">Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor elit. Sequi, vero. adipisicing elit. Aspernatur expedita aliquam amet nobis veritatis totam.</div>
+        </div>
+
+        <div class="flex mt-16 max-sm:flex-col justify-center gap-8 items-center w-full h-[60%]" >
+
+            <div class="flex max-sm:w-[80%] w-[16rem] bg-white/30 rounded-r-3xl backdrop-blur-lg flex-col justify-around">
+                <div class="font-medium font-poppins text-md text-black pt-3 px-3 text-3xl"><p>UI/UX <span class="text-[#e6722a]">Design</span></p></div>
+                
+                <div class="w-[100%] pe-0 ps-0 mt-2 bg-gray-300 h-[2px]"></div>
+
+                <div class="pt-3 flex w-full px-3 pb-3 h-[75%] ">
+                    <img src="images/uiux.jpg" class="rounded-lg" alt="not awailable.png">
+                </div>
+            </div>
+            
+            <div class="flex w-[16rem] max-sm:w-[80%]  bg-white/30 rounded-r-3xl backdrop-blur-lg flex-col justify-around">
+                <div class="font-medium font-poppins text-md text-black pt-3 px-3 text-3xl"><p>Landing<span class="text-[#c85e1c] ms-2">Page</span></p></div>
+                
+                <div class="w-[100%] pe-0 ps-0 mt-2 bg-gray-300 h-[2px]"></div>
+
+                <div class="pt-3 flex w-full px-3 pb-3 h-[75%] ">
+                    <img src="images/landingpage.jpg" class="rounded-lg" alt="not awailable.png">
+                </div>
+            </div>
+            <div class="flex w-[16rem] max-sm:w-[80%]  bg-white/30 rounded-r-3xl backdrop-blur-lg flex-col justify-around">
+                <div class="font-medium font-poppins text-md text-black pt-3 px-3 text-3xl"><p>Web <span class="text-[#e6722a]">Design</span></p></div>
+                
+                <div class="w-[100%] pe-0 ps-0 mt-2 bg-gray-300 h-[2px]"></div>
+
+                <div class="pt-3 flex w-full px-3 pb-3 h-[75%] ">
+                    <img src="images/webdesign.jpg" class="rounded-lg" alt="not awailable.png">
+                </div>
+            </div>
+
+        </div>
+<!-- carasoul end here  -->
+     </section>
+
+     <!-- 
+        work and experience section starts from below
+     *************************************************************************************************-->
+
+     <section id="work" class="overflow-hidden h-auto w-full bg-white p-4">
+
+        <div class="flex justify-center items-center mt-4 font-poppins font-semibold max-sm:text-3xl text-5xl">
+            <p>My <span class="font-poppins text-[#fe853a]">Work Experience</span> </p>
+        </div>
+
+        <div class="w-full max-sm:p-0 flex-col h-auto max-sm:gap-6 mt-4 flex justify-center items-center">
+
+            <div class="flex max-sm:w-[100%] justify-between items-center w-[80%] h-auto max-sm:p-2 p-4">
+                <div class="flex flex-col justify-center w-[60%]">
+                    <span class="max-sm:text-lg max-sm:w-[50%] font-poppins text-3xl font-semibold">Congnizand Mumbai</span>
+                    <span class="max-sm:text-sm font-poppins text-lg text-gray-600 font-normal">Sep-2016 July-2020 </span>
+                </div>
+                
+                <div class="flex text-right flex-col items-end justify-center w-[60%]">
+                    <span class="max-sm:text-lg font-poppins text-3xl font-semibold">Experience Designer</span>
+                    <span class="font-poppins max-sm:hidden text-gray-600 text-lg font-normal">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque quisquam voluptatem assumenda. </span>
+                </div>  
+
+            </div>
+            
+            <div class="max-sm:w-[100%] flex justify-between items-center w-[80%] h-auto max-sm:p-2 p-4">
+                <div class="flex flex-col justify-center w-[60%]">
+                    <span class="max-sm:text-lg font-poppins text-3xl font-semibold">Sugee PVt Ltd Mumbai</span>
+                    <span class="max-sm:text-sm font-poppins text-lg text-gray-600 font-normal">Sep-2020 July2023 </span>
+                </div>
+                
+                <div class="flex text-right flex-col justify-center items-end w-[60%]">
+                    <span class="max-sm:text-lg font-poppins text-3xl font-semibold">UI/UX Designer</span>
+                    <span class="max-sm:hidden font-poppins text-gray-600 text-lg font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, odio? Adipisci, voluptatem. </span>
+                </div>
+
+            </div>
+            <div class="max-sm:w-[100%] flex justify-between items-center w-[80%] h-auto max-sm:p-2 p-4">
+                <div class="flex flex-col justify-center w-[60%]">
+                    <span class="max-sm:text-lg font-poppins text-3xl font-semibold">Cinetstox Mumabi</span>
+                    <span class="max-sm:text-sm font-poppins text-lg text-gray-600 font-normal">Sep-2023</span>
+                </div>
+                
+                <div class="flex flex-col justify-center items-end text-right w-[60%]">
+                    <span class="max-sm:text-lg font-poppins text-3xl font-semibold">Lead UX Designer</span>
+                    <span class="max-sm:hidden font-poppins text-lg text-gray-600 font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio et qui aliquam.</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+     </section>
+
+     <!--************************************************************************************** 
+     hire me section starts here 
+      -->
+    <section class="h-auto overflow-hidden pb-6 w-full bg-[#F2F4F7] rounded-[3rem] pt-6">
+        <div class="flex h-4/5  mt-12 w-full justify-around items-center">
+            <div class="max-sm:hidden flex justify-center">
+                <img src="images/hire3.jpeg" class="h-[500px] w-[470px]" alt="hire.png image">
+            </div>
+
+            <div class="flex flex-col gap-8 max-sm:h-auto max-sm:w-full max-sm:p-4  h-[100%] w-[35%]">
+
+                <div class="flex justify-start max-sm:text-xl">
+                    <span class="font-poppins text-5xl font-semibold">
+                        Why <strong class="text-[#fe853a] font-semibold ms-2">Hire Me ?  </strong>
+                    </span>
+                </div>
+
+                <div class="flex">
+                    <span class="text-[16px] text-slate-400 max-sm:text-sm">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt tempore laboriosam deleniti odio recusandae quidem accusamus aspernatur dolor explicabo debitis.
+                    </span>
+                </div>
+
+                <div class="flex justify-between font-poppins max-sm:text-lg">
+                    <span class="text-2xl max-sm:text-lg font-semibold">450+ <br> <p class="font-normal text-sm text-slate-600">Project Completed</p></span>
+                    <span class="text-2xl max-sm:text-lg font-semibold">450+ <br> <p class="font-normal text-sm text-slate-600">Project Completed</p></span>
+                </div>
+
+                <div class="flex pt-4">
+                    <a href="" class="font-semibold border-[2px] py-6 border-slate-800 rounded-[20px] px-8 max-sm:text-2xl text-3xl ">
+                            Hire me!
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- **********************************************************************************
+     portfolio section starts below 
+     -->
+     <section id="project" class="h-auto w-full bg-slate-700 p-8 mt-8">
+        <div class="flex px-8 justify-between items-center">
+            <span class="text-5xl max-sm:text-xl font-poppins font-semibold text-white"> Let's have a look at <br> my <span class="text-semibold text-[#fe853a]">porfolio</span> </span>
+            <span class="max-sm:text-sm text-xl bg-[#fe853a] max-sm:px-3 px-5 max-sm:py-2 py-3 max-sm:font-normal font-semibold text-white rounded-full ">See all</span>
+        </div>
+        <div class="pt-16 w-full h-auto  max-sm:flex-col max-sm:px-3 flex items-center justify-center gap-8">
+            <div class="flex max-sm:w-[95%] rounded-xl max-lg:h-[15rem] w-[35rem] h-[20rem] bg-no-repeat bg-cover " style="background-image: url('images/portfolio-image-one.jpg');">
+                    <span class="text-4xl max-lg:text-2xl max-sm:text-xl  font-poppins font-semibold inline relative mt-[45%] ms-[5%] shadow-lg text-[#fe853a] max-sm:hidden">Lerante</span>
+                    
+                </div>
+                <div class="flex max-sm:w-[95%] max-lg:h-[15rem] rounded-xl w-[35rem] h-[20rem] bg-cover bg-no-repeat p-4" style="background-image: url('images/portfolio-img-two.jpg');">
+                    <a href="" >
+                        <span class="max-sm:hidden p-4 flex items-center justify-center rounded-full absolute right-[7%] bg-[#fe853a] h-16 w-16">
+                            <i class="fa-solid fa-arrow-right text-white "></i>
+                        </span>
+                    </a>
+                    <span class="text-4xl max-lg:text-2xl max-sm:text-xl font-poppins font-semibold inline relative mt-[45%] ms-[5%] shadow-xl text-[#fe853a] max-sm:hidden">Lerante</span>
+
+
+            </div>
+
+
+        </div>
+
+
+     </section>
+     <!-- ********************************************************************************************************
+       portfolio 2 section below -->
+       <section class="h-auto  w-full overflow-hidden bg-slate-700 max-sm:mt-0 pt-5">
+            <div class="flex justify-center flex-col items-center">
+                    <div class="flex max-sm:flex-wrap justify-center max-sm:ps-4 max-sm:justify-start max-sm:gap-3 max-lg:flex-wrap gap-5">
+                        <span class="px-6 py-3 bg-slate-200 font-poppins font-normal text-black max-sm:text-[0.8em]  rounded-full">Landing Page</span>
+                        <span class="px-6 py-3 bg-slate-200 font-poppins font-normal text-black max-sm:text-[0.8em]  rounded-full">Product Design</span>
+                        <span class="px-6 py-3 bg-slate-200 font-poppins font-normal text-black max-sm:text-[0.8em]  rounded-full">Animation</span>
+                        <span class="px-6 py-3 bg-slate-200 font-poppins font-normal text-black max-sm:text-[0.8em] rounded-full">Glassmorphism</span>
+                        <span class="px-6 py-3 bg-slate-200 font-poppins font-normal text-black max-sm:text-[0.8em]  rounded-full">Cards</span>
+
+                    </div>
+
+                    <div class="w-[70%] max-lg:w-[80%] gap-5 max-sm:w-full tracking-tighter flex justify-center items-center mt-8">
+                        <span class="font-poppins max-sm:text-xl text-4xl text-white max-sm:font-semibold max-sm:me-0 font-bold me-4"> Lirante - Food Delivery Solution</span>
+                        <a href="">
+                            <span class="flex justify-center text-white items-center max-sm:h-[2rem] max-sm:w-[2rem] h-[3.5rem] w-[3.5rem] bg-[#fe853a] rounded-full">
+                                <i class="fa-solid fa-arrow-right -rotate-45 "></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="flex max-sm:w-full max-sm:ps-4 w-2/4 max-lg:w-[80%] mt-5 justify-center items-center">
+                        <span class="font-poppins max-sm:text-sm text-slate-300 font-normal">
+                            Lorem ipsum dolor sit, Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure natus repudiandae delectus? Error, voluptatem modi corrupti eligendi perspiciatis itaque deserunt! amet consectetur adipisicing elit. Id beatae voluptatum amet vitae architecto, accusantium hic aperiam reprehenderit earum esse.
+                        </span>
+                    </div>
+    <!--*********************************      carasoul starts here  -->
+
+                    <div class="flex h-[50vh] max-sm:w-[100%] w-[80%] pb-8 ">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper max-sm:h-full flex gap-4 max-sm:gap-0">
+                              <div class="swiper-slide font-poppins">
+                                <div class="flex h-full w-full bg-gradient-to-br from-pink-400 to-slate-200 rounded-xl">
+                                    <div class="flex flex-col items-center w-full max-sm:pt-2 pt-4 ">
+                                        <div class="flex justify-center max-sm:gap-2 gap-4 items-center w-full">
+                                            <span class="bg-black h-[3rem] w-[3rem] border-slate-200 border-2 rounded-full bg-no-repeat bg-cover" style="background-image: url('images/boyone.jpg');"></span>
+                                            <span class="text-lg font-semibold text-white">Jessi Stone  </span>
+                                        </div>
+                                        <div class="flex flex-wrap items-center max-sm:pt-0 max-lg:pt-0 pt-8 w-[80%]">
+                                            <span class="text-slate-700 max-sm:text-[0.8em] text-sm"> 
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae odit perferendis fugit consequuntur ullam fugiat ut facere rerum voluptatum assumenda.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide font-poppins">
+                                <div class="flex h-full w-full bg-gradient-to-br from-pink-400 to-slate-100 rounded-xl">
+                                    <div class="flex flex-col items-center w-full pt-4 ">
+                                        <div class="flex justify-center gap-4 items-center w-full">
+                                            <span class="bg-black h-[3rem] w-[3rem] border-slate-200 border-2 bg-no-repeat bg-cover rounded-full " style="background-image: url('images/boy2.jpg');"></span>
+                                            <span class="text-lg font-semibold text-white">Shubham Kashyap</span>
+                                        </div>
+                                        <div class="flex flex-wrap items-center pt-8 w-[80%]">
+                                            <span class="text-slate-700 text-sm"> 
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae odit perferendis fugit consequuntur ullam fugiat ut facere rerum voluptatum assumenda.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide font-poppins">
+                                <div class="flex h-full w-full bg-gradient-to-br from-pink-400 to-slate-200 rounded-xl">
+                                    <div class="flex flex-col items-center w-full pt-4 ">
+                                        <div class="flex justify-center gap-4 items-center w-full">
+                                            <span class="bg-black h-[3rem] w-[3rem] border-red-400 border-2 rounded-full bg-no-repeat bg-cover" style=" background-image: url('/images/viakrant.jpg');"></span>
+                                            <span class="text-lg font-semibold text-white">Jacob Wilson</span>
+                                        </div>
+                                        <div class="flex flex-wrap items-center pt-8 w-[80%]">
+                                            <span class="text-slate-700 text-sm"> 
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae odit perferendis fugit consequuntur ullam fugiat ut facere rerum voluptatum assumenda.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide font-poppins">
+                                <div class="flex h-full w-full bg-gradient-to-br from-pink-400 to-slate-200 rounded-xl">
+                                    <div class="flex flex-col items-center w-full pt-4 ">
+                                        <div class="flex justify-center gap-4 items-center w-full">
+                                            <span class=" h-[3rem] w-[3rem] border-slate-200 border-2 rounded-full bg-cover bg-no-repeat" style="background-image: url('images/jacob.jpg');"></span>
+                                            <span class="text-lg font-semibold text-white">Vikram Sinha</span>
+                                        </div>
+                                        <div class="flex flex-wrap items-center pt-8 w-[80%]">
+                                            <span class="text-slate-700 text-sm"> 
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae odit perferendis fugit consequuntur ullam fugiat ut facere rerum voluptatum assumenda.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                              </div>
+                              
+                              <div class="swiper-slide font-poppins">
+                                <div class="flex h-full w-full bg-gradient-to-br from-pink-400 to-slate-200 rounded-xl">
+                                    <div class="flex flex-col items-center w-full pt-4 ">
+                                        <div class="flex justify-center gap-4 items-center w-full">
+                                            <span class=" h-[3rem] w-[3rem] border-slate-200 border-2 rounded-full bg-no-repeat bg-cover" style="background-image: url('/images/girlsone.jpg') ;"></span>
+                                            <span class="text-lg font-semibold text-white">Jessica Taylor</span>
+                                        </div>
+                                        <div class="flex flex-wrap items-center pt-8 w-[80%]">
+                                            <span class="text-slate-700 text-sm"> 
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae odit perferendis fugit consequuntur ullam fugiat ut facere rerum voluptatum assumenda.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                              </div>
+                              
+                              
+                              
+                            </div>
+                            <div class="swiper-pagination"></div>
+                          </div>
+                    </div>
+                    
+
+                    </div>
+            </div>
+            
+    
+            
+            
+
+ 
+       </section>
+       <!-- ************************************************************************************************************************
+       -->
+
+       <section class="h-auto pt-4 w-full flex justify-center overflow-hidden items-center pb-8">
+            <div class=" flex w-[60vw] max-sm:w-full h-auto  flex-col">
+                <div class="flex justify-center flex-col gap-2 items-center w-full">
+                    <span class="text-5xl max-sm:text-2xl font-bold font-poppins text-[#344054]">Have an awesome Project</span>
+                    <span class="text-5xl max-sm:text-2xl font-bold font-poppins text-[#344054]">Idea? <span class="text-[#fe853a]">Let's Discuss</span></span>
+                </div>
+                <div class="flex flex-col items-center w-full mt-4 ">
+                    <div class="flex items-center h-[4rem] border-slate-300 border-[1px] px-3 rounded-full w-[80%] justify-between">
+                        <div class="flex gap-4 w-[80%] ">
+                            <span><i class="fa-regular fa-envelope bg-[#FDE8D4] p-4 text-[#fe853a] rounded-full"></i></span>
+                            <span> <input placeholder="Enter email address" type="text" class="active:border-none focus:outline-none font-poppins border-none w-full h-full"></span>
+                        </div>
+                        <div class="flex">
+                            <button class="font-poppins text-sm bg-[#fe853a] p-3 text-white rounded-full">Send</button>
+                        </div>
+
+                    </div>
+                    <div class="flex justify-between max-sm:text-[0.4em] w-[80%] max-sm:w-[100vw] max-sm:px-2 px-7  h-8 mt-2   ">
+                        <div class="flex font-poppins gap-2 text-sm">
+                            <span>
+                                <i class="fa-regular fa-star"></i> 4.0
+                            </span>
+                            <span>Average Ratings</span>
+                        </div>
+                        
+                        <div class="flex font-poppins gap-2 text-sm">
+                            <span>
+                                <i class="fa-solid fa-award"></i> 25+
+                            </span>
+                            <span>Winning Awards</span>
+                        </div>
+                        <div class="flex font-poppins gap-2 text-sm">
+                            <span>
+                                <i class="fa-solid fa-certificate"></i>
+                            </span>
+                            <span>Certified Product Designer</span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+       </section>
+       <!-- ***********************************************************************************************************************************************
+       footer section below -->
+
+
+        <section id="contact" class="flex justify-center   bg-[#272727] items-center h-auto mt-8 w-full">
+
+            <div class="flex w-full flex-col max-sm:p-2 gap-8 h-auto p-8     ">
+                <div class="flex justify-between items-center ">
+                    <span class="max-sm:text-lg  text-5xl font-bold font-poppins text-white">Let's Connect There</span>
+                    <button class="text-xl max-sm:text-sm max-sm:px-2 font-normal px-4 bg-[#fe853a] rounded-full text-white py-2 font-poppins">Hire Me</button>
+                </div>
+
+
+                <div class="flex w-full h-auto pb-8 max-sm:text-[0.5em] overflow-hidden max-sm:flex-col  border-b-2 border-t-2 pt-8">
+                    <div class="flex flex-col max-sm:w-full w-[40%] gap-4 flex-wrap ">
+                        <span class="text-2xl font-semibold text-[#fe853a] font-poppins">Shubham</span>
+                        <span class="text-sm font-normal font-poppins text-white w">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, nisi! Unde nesciunt perferendis odio at error dolorum. Aperiam magni in molestiae dolores harum architecto dolore.
+                        </span>
+                        <span class="flex">
+                            <ul class="flex  gap-3">
+                                <li><a href="">
+                                    <i class="fa-brands text-white fa-2x fa-facebook "></i>
+                                </a></li>
+                                <li><a href="">
+                                    <i class="fa-brands fa-2x text-white fa-square-x-twitter"></i>
+                                </a></li>
+                                <li><a href="">
+                                    <i class="fa-brands fa-2x text-white fa-instagram "></i>
+                                </a></li>
+                                <li><a href="">
+                                    <i class=" fa-brands fa-2x text-white fa-linkedin"></i>
+                                </a></li>
+                                <li><a href="">
+                                    <i class="fa-brands fa-2x text-white fa-youtube"></i>
+                                </a></li>
+
+                            </ul>
+                        </span>
+                    </div>
+                    <div class="flex items-center font-poppins max-sm:w-full h-auto flex-col w-[20%]">
+                        <span class=" text-lg text-[#fe853a] font-normal ">Navigation</span>
+                        <ul class="text-white max-sm:text-[1.2em] flex max-sm:flex-row flex-col mt-4 gap-4 font-normal">
+                            <li><a href="">Home</a></li>
+                            <li><a href="">About Us</a></li>
+                            <li><a href="">Resume</a></li>
+                            <li><a href="">Service</a></li>
+                            <li><a href="">Projects</a></li>
+                        </ul>
+                    </div>
+                    <div class="flex max-lg:hidden flex-col max-sm:mt-8 max-sm:border-t-2 max-sm:w-full w-[20%] flex-wrap gap-3 font-poppins">
+                        <span class="text-lg text-[#fe853a] font-normal">Contact</span>
+                        <span class="flex flex-col gap-3 justify-between">
+                            <span class="text-sm font-normal text-white">+91996584...</span>
+                        <span class="text-sm font-normal text-white">stream.7@gmail.com</span>
+                        </span>
+                    </div>
+                    <div class="flex flex-col max-lg:w-[80%] max-sm:w-full max-sm:mt-8  w-[20%]">
+                        <span class="text-lg text-[#fe853a] font-normal">Get The Latest Info</span>
+                        <span class="flex -ms-3">
+                            <input type="text" placeholder="Enter Email" class="ps-4 max-sm:text-sm w-full rounded-xl h-[2.5rem]">
+                            <button><i class="fa-solid fa-2x max-lg:fa-1 fa-paper-plane ms-2 text-[#fe853a] bg-white max-sm:p-3 p-3 rounded-xl"></i></button>
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="font-poppins max-sm:w-full max-sm:justify-between flex justify-around max-sm:px-0 text-white px-8 max-sm:pt-0 pt-2 items-center">
+                    <span class="text-sm flex flex-wrap max-sm:text-[0.6em]">
+                        Copyright &copy;2024 Shubham. All Rights Reserved
+                    </span>
+                    <span class="text-sm flex flex-wrap max-sm:text-[0.6em]">
+                        User Term&Conditions|Privacy Policy
+                    </span>
+                </div>
+
+            </div>
+
+
+        </section>
+       
+
+
+       
+       <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+       <script>
+        var swiper = new Swiper(".mySwiper", {
+          effect: "coverflow",
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: "auto",
+          coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+          },
+        });
+      </script>
+</body>
+<script src="/script.js"></script>
+</html>
